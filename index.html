@@ -14,36 +14,30 @@
       min-height: 100vh;
     }
 
-    /* Navigation Bar */
-    nav {
-      display: flex;
-      gap: 2rem;
-      padding: 2rem;
-      font-weight: bold;
-    }
-    nav a { color: #ffffff; text-decoration: none; border-bottom: 2px solid transparent; }
-    nav a:hover { border-bottom: 2px solid #facc15; }
+    nav { display: flex; gap: 2rem; padding: 2rem; font-weight: bold; }
+    nav a { color: #ffffff; text-decoration: none; }
 
-    /* Hero Section */
     .hero { text-align: center; margin: 4rem 0; }
     .hero h1 { color: #facc15; }
 
-    /* Contact Section */
-    #contact-section {
+    /* Container matching image_3.png */
+    #action-container {
       text-align: center;
       background: #111;
       padding: 3rem;
       border-radius: 8px;
       margin-top: 2rem;
+      width: 80%;
+      max-width: 400px;
     }
-    .contact-btn {
+    .action-btn {
+      display: inline-block;
       background: #ffffff;
       color: #000000;
       padding: 12px 30px;
-      border: none;
+      text-decoration: none;
       border-radius: 4px;
       font-weight: bold;
-      cursor: pointer;
       margin-top: 1rem;
     }
 
@@ -52,23 +46,21 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <a href="#">HOME</a>
     <a href="#">CONTACT</a>
   </nav>
 
-  <!-- Hero Section -->
   <div class="hero">
     <h1>Trade Crypto Smarter</h1>
     <p>Maximize your crypto profits with our expert guidance.</p>
   </div>
 
-  <!-- Call to Action -->
-  <div id="contact-section">
+  <div id="action-container">
     <h2>INVEST IN CRYPTO</h2>
     <p>Join the crypto revolution and start trading today.</p>
-    <button class="contact-btn">Contact Us</button>
+    <!-- Redirect Link -->
+    <a href="https://t.me/AverAssistancebot" class="action-btn">Get Started</a>
   </div>
 
   <footer>
