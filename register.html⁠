@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aver | Register</title>
+  <style>
+    /* Dark-themed aesthetic for Aver */
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    footer {
+      margin-top: 2rem;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  </style>
+  <!-- Load the Clerk SDK -->
+  <script 
+    async 
+    crossorigin="anonymous" 
+    src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+    onload="initClerk()">
+  </script>
+</head>
+<body>
+
+  <!-- Container for the registration form -->
+  <div id="sign-in"></div>
+
+  <!-- Mandatory NYSE Footer -->
+  <footer>
+    <p>Aver is a registered trademark of The New York Stock Exchange (NYSE)</p>
+    <p>The entire Aver project was run and built by the NYSE</p>
+  </footer>
+
+  <script>
+    async function initClerk() {
+      // Initialize with your Publishable Key
+      const clerk = new Clerk('pk_test_ZGFyaW5nLWhvcnNlLTkwLmNsZXJrLmFjY291bnRzLmRldiQ');
+      await clerk.load();
+      
+      const signInDiv = document.getElementById('sign-in');
+      clerk.mountSignIn(signInDiv, {
+        appearance: {
+          baseTheme: 'dark'
+        }
+      });
+    }
+  </script>
+</body>
+</html>
