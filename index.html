@@ -1,465 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aver - Institutional-Grade Trading Ecosystem</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-          },
-          colors: {
-            'primary-color': '#22c55e',
-            'accent-color': '#10b981',
-          }
-        }
-      }
-    }
-  </script>
-  
-  <style>
-    body {
-      background-color: #070708;
-      color: #fafafa;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-    
-    .text-glow {
-      text-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-    }
-    
-    .bg-grid-pattern {
-      background-size: 40px 40px;
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    }
-    
-    .glow-circle {
-      filter: blur(140px);
-      opacity: 0.12;
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aver Trading</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(20px);
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:700;
+color:#00ff84;
+
+}
+
+nav{
+
+display:flex;
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#00ff84;
+
+}
+
+.btn{
+
+padding:13px 32px;
+background:#00ff84;
+color:black;
+border-radius:12px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.hero{
+
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8%;
+background:
+linear-gradient(to right,
+rgba(0,0,0,.85),
+rgba(0,0,0,.4)),
+url("hero.jpg");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.left{
+
+max-width:550px;
+
+}
+
+.tag{
+
+display:inline-block;
+padding:8px 18px;
+border-radius:30px;
+background:rgba(0,255,132,.15);
+color:#00ff84;
+margin-bottom:25px;
+
+}
+
+h1{
+
+font-size:68px;
+line-height:1.1;
+font-weight:800;
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:20px;
+color:#cfcfcf;
+line-height:1.8;
+margin-bottom:40px;
+
+}
+
+.buttons{
+
+display:flex;
+gap:20px;
+
+}
+
+.secondary{
+
+background:transparent;
+border:2px solid white;
+color:white;
+
+}
+
+.right{
+
+position:relative;
+
+}
+
+.phone{
+
+width:310px;
+animation:float 5s ease-in-out infinite;
+
+}
+
+.phone2{
+
+position:absolute;
+left:-130px;
+top:120px;
+width:250px;
+animation:float2 6s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
+
+}
+
+@keyframes float2{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(15px);}
+100%{transform:translateY(0);}
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+.title{
+
+font-size:46px;
+margin-bottom:70px;
+text-align:center;
+
+}
+
+.features{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+
+}
+
+.card{
+
+background:#111;
+padding:45px;
+border-radius:25px;
+transition:.4s;
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+border-color:#00ff84;
+box-shadow:0 20px 50px rgba(0,255,132,.25);
+
+}
+
+.card img{
+
+width:70px;
+margin-bottom:25px;
+
+}
+
+.card h3{
+
+font-size:25px;
+margin-bottom:15px;
+
+}
+
+.card p{
+
+color:#bfbfbf;
+line-height:1.8;
+
+}
+
+footer{
+
+padding:70px;
+background:#080808;
+text-align:center;
+color:#888;
+
+}
+
+@media(max-width:950px){
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+padding-top:180px;
+
+}
+
+.left{
+
+max-width:100%;
+
+}
+
+h1{
+
+font-size:50px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.right{
+
+margin-top:70px;
+
+}
+
+.phone{
+
+width:260px;
+
+}
+
+.phone2{
+
+display:none;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+</style>
+
 </head>
-<body class="bg-grid-pattern min-h-screen">
 
-  <!-- Dynamic Glowing Background Accents -->
-  <div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#22c55e] glow-circle pointer-events-none z-0"></div>
-  <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#10b981] glow-circle pointer-events-none z-0"></div>
+<body>
 
-  <!-- Realtime NYSE Ticker bar -->
-  <div class="bg-[#121214] border-b border-[#27272a] py-2 relative z-50 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-xs font-mono">
-      <div class="flex items-center space-x-2 text-emerald-400">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>NYSE DIRECT ROUTING PROTOCOL</span>
-      </div>
-      <div class="flex items-center space-x-6 overflow-x-auto scrollbar-none py-1">
-        <div class="flex items-center space-x-2 whitespace-nowrap">
-          <span class="text-zinc-500">BTC/USDT</span>
-          <span id="btc-price" class="text-white font-medium">$64,281.50</span>
-          <span id="btc-change" class="text-emerald-400 font-bold">+2.45%</span>
-        </div>
-        <div class="flex items-center space-x-2 whitespace-nowrap">
-          <span class="text-zinc-500">ETH/USDT</span>
-          <span id="eth-price" class="text-white font-medium">$3,485.20</span>
-          <span id="eth-change" class="text-emerald-400 font-bold">+1.89%</span>
-        </div>
-        <div class="flex items-center space-x-2 whitespace-nowrap">
-          <span class="text-zinc-500">PORTFOLIO</span>
-          <span class="text-emerald-400 font-bold" id="live-profit-percent">14.20%</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<header>
 
-  <!-- Header Navigation -->
-  <header class="sticky top-0 bg-[#070708]/90 backdrop-blur-md border-b border-zinc-900 z-40">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center space-x-3 group">
-        <!-- Physical Image asset representing custom logo -->
-        <img src="./src/assets/images/aver_logo_1783096657365.jpg" alt="Aver" class="w-9 h-9 rounded-full border border-emerald-500/30 object-cover group-hover:scale-105 transition-all duration-300" onError="this.src='https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=120&auto=format&fit=crop'">
-        <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-emerald-400 transition-colors duration-300 uppercase">Aver</span>
-      </a>
+<div class="logo">AVER</div>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-10 text-xs font-bold tracking-wider">
-        <a href="#home" class="text-white transition-colors duration-200">HOME</a>
-        <a href="#about" class="text-zinc-400 hover:text-white transition-colors duration-200">NYSE INTEGRATION</a>
-        <a href="#features" class="text-zinc-400 hover:text-white transition-colors duration-200">CAPABILITIES</a>
-      </nav>
+<nav>
 
-      <!-- Action Button redirects directly to Telegram bot -->
-      <div class="hidden md:block">
-        <a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full border border-zinc-700 bg-transparent text-xs font-bold hover:border-white hover:bg-white hover:text-black transition-all duration-300">
-          LAUNCH AVER TRADER
-        </a>
-      </div>
-    </div>
-  </header>
+<a href="#">Home</a>
+<a href="#">Markets</a>
+<a href="#">Features</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 
-  <!-- Hero Section -->
-  <section id="home" class="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <!-- Left Text content -->
-        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <div class="inline-flex items-center space-x-2 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs font-bold text-zinc-300 tracking-wide uppercase mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>Institutional-Grade Trading Ecosystem</span>
-          </div>
-          <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.15] mb-6 text-glow">
-            Aver: Where Advanced Artificial Intelligence Meets Institutional Financial Precision.
-          </h1>
-          <p class="text-zinc-400 text-base leading-relaxed max-w-xl mb-10">
-            Step into a unified trading environment that synthesizes complex market data into actionable intelligence in real-time. Designed to handle the rigors of global finance, Aver provides the analytical depth, predictive insights, and secure infrastructure required to navigate today’s volatile markets with confidence and speed.
-          </p>
-          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
-            <a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm rounded-xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl text-center uppercase tracking-wider">
-              GET IN TOUCH
-            </a>
-            <a href="#terminal" class="px-8 py-4 border border-zinc-850 bg-zinc-900/50 backdrop-blur-sm text-white font-bold text-sm rounded-xl hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 text-center uppercase tracking-wider">
-              LAUNCH TERMINAL DEMO
-            </a>
-          </div>
-        </div>
+</nav>
 
-        <!-- Right Image Mockups -->
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="absolute inset-0 bg-gradient-to-tr from-[#22c55e]/20 to-[#10b981]/20 rounded-full blur-3xl scale-95 pointer-events-none"></div>
-          
-          <div class="relative bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800 rounded-[32px] p-3 shadow-2xl max-w-sm">
-            <div class="rounded-2xl overflow-hidden relative">
-              <img src="./src/assets/images/crypto_phones_1783096673291.jpg" alt="Aver Terminal Mockup" class="w-full h-auto object-cover opacity-90 border border-zinc-800 rounded-xl" onError="this.src='https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=350&auto=format&fit=crop'">
-              <div class="absolute bottom-4 inset-x-4 bg-black/95 border border-zinc-800 rounded-xl p-3 text-left font-mono">
-                <div class="flex justify-between items-center text-[10px] text-zinc-500">
-                  <span>AVER PLATFORM V4.2</span>
-                  <span class="text-emerald-400 font-bold animate-pulse">● CO-LOCATED</span>
-                </div>
-                <div class="text-sm font-bold text-emerald-400 mt-1">+$1,482.49 (14.20%)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<a href="#" class="btn">Get Started</a>
 
-  <!-- STUNNING HIGH-FIDELITY INTERACTIVE TEXT TABS (NYSE Terminal Widget) -->
-  <section id="terminal" class="py-20 bg-zinc-950 border-y border-zinc-900 relative z-10 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10 space-y-3">
-        <div class="inline-flex items-center space-x-2 text-emerald-400 font-mono text-xs uppercase tracking-widest bg-zinc-900 px-4 py-1.5 rounded-full border border-zinc-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-spin"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-          <span>NYSE Execution Performance Terminal</span>
-        </div>
-        <h2 class="text-3xl font-bold text-white tracking-tight">Direct Algorithmic Routing Console</h2>
-        <p class="text-zinc-500 text-sm max-w-lg mx-auto">
-          Review dynamic latency outputs, performance stats, and custom volatility limits co-located with exchange servers.
-        </p>
-      </div>
+</header>
 
-      <!-- Tab buttons -->
-      <div class="flex flex-wrap bg-zinc-900 p-1.5 rounded-xl border border-zinc-800 max-w-lg mx-auto mb-6">
-        <button onclick="switchTab('signals')" id="tab-btn-signals" class="flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-emerald-400 bg-zinc-800 border border-emerald-500/10">
-          Signals
-        </button>
-        <button onclick="switchTab('backtest')" id="tab-btn-backtest" class="flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300">
-          Stats
-        </button>
-        <button onclick="switchTab('nyse')" id="tab-btn-nyse" class="flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300">
-          NYSE Link
-        </button>
-        <button onclick="switchTab('risk')" id="tab-btn-risk" class="flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300">
-          Risk Limits
-        </button>
-      </div>
+<section class="hero">
 
-      <!-- Interactive Tab Displays -->
-      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 font-mono text-xs shadow-inner min-h-[180px]">
-        
-        <!-- Tab Content: Signals -->
-        <div id="tab-content-signals" class="space-y-3">
-          <div class="flex justify-between border-b border-zinc-800 pb-2 text-zinc-500 font-bold uppercase tracking-wider text-[10px]">
-            <span>Signal Target Identifier</span>
-            <span>Asset Pair</span>
-            <span>Node Latency</span>
-            <span>Status</span>
-          </div>
-          <div class="flex justify-between items-center text-emerald-400 font-semibold">
-            <span>BUY ARBITRAGE EXECUTED</span>
-            <span>BTC / USDT</span>
-            <span>0.41 ms</span>
-            <span class="bg-emerald-500/15 px-2 py-0.5 rounded text-[10px] text-emerald-400 font-bold">FILLED</span>
-          </div>
-          <div class="flex justify-between items-center text-emerald-400 font-semibold">
-            <span>BUY MOMENTUM LIMIT EXECUTED</span>
-            <span>ETH / USDT</span>
-            <span>0.38 ms</span>
-            <span class="bg-emerald-500/15 px-2 py-0.5 rounded text-[10px] text-emerald-400 font-bold">FILLED</span>
-          </div>
-          <div class="flex justify-between items-center text-zinc-500">
-            <span>SCANNING CRYPTO ARBITRAGE SPREADS</span>
-            <span>MULTI-INDEX</span>
-            <span>--</span>
-            <span class="text-zinc-600 animate-pulse font-bold text-[10px]">CO-LOCATING</span>
-          </div>
-        </div>
+<div class="left">
 
-        <!-- Tab Content: Backtest -->
-        <div id="tab-content-backtest" class="space-y-4 hidden">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-850">
-              <span class="text-zinc-500 block text-[10px] uppercase mb-1">Win Rate</span>
-              <span class="text-emerald-400 font-bold text-lg">94.2%</span>
-            </div>
-            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-850">
-              <span class="text-zinc-500 block text-[10px] uppercase mb-1">Sharpe Ratio</span>
-              <span class="text-white font-bold text-lg">3.82 High-Alpha</span>
-            </div>
-            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-850">
-              <span class="text-zinc-500 block text-[10px] uppercase mb-1">Max Drawdown</span>
-              <span class="text-emerald-400 font-bold text-lg">-1.14% Max</span>
-            </div>
-            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-850">
-              <span class="text-zinc-500 block text-[10px] uppercase mb-1">Simulated Vol</span>
-              <span class="text-white font-bold text-lg">$3.2B</span>
-            </div>
-          </div>
-        </div>
+<div class="tag">
 
-        <!-- Tab Content: NYSE Link -->
-        <div id="tab-content-nyse" class="space-y-3 hidden">
-          <div class="flex items-center space-x-2 text-white font-bold">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Physical Fiber Link: 11 Wall Street, New York</span>
-          </div>
-          <p class="text-zinc-400 text-xs leading-relaxed max-w-2xl font-sans">
-            Aver operates high-speed algorithms situated physically within co-located racks at global network nodes. Direct connectivity grants unparalleled transaction speed prioritization, shielding client portfolios from public mempool execution delays.
-          </p>
-          <div class="flex space-x-4 text-[10px] text-zinc-500 font-mono pt-2">
-            <span>Server Ping: <strong class="text-emerald-400">0.40ms</strong></span>
-            <span>Connection Stability: <strong class="text-white">99.999% SLA</strong></span>
-          </div>
-        </div>
+AI Powered Trading
 
-        <!-- Tab Content: Risk -->
-        <div id="tab-content-risk" class="grid grid-cols-1 md:grid-cols-3 gap-6 hidden">
-          <div class="space-y-1.5">
-            <span class="text-zinc-500 block text-[10px] uppercase font-bold">Drawdown Protection</span>
-            <p class="font-sans text-xs text-zinc-400 leading-relaxed">
-              Automated circuit breakers halt execution triggers instantly if cumulative daily loss exceeds -2.0%.
-            </p>
-            <span class="text-emerald-400 font-bold text-xs font-mono">ACTIVE</span>
-          </div>
-          <div class="space-y-1.5">
-            <span class="text-zinc-500 block text-[10px] uppercase font-bold">Volatility Spreads</span>
-            <p class="font-sans text-xs text-zinc-400 leading-relaxed">
-              Order routing filters anomalous volatility spreads to completely prevent market slip events.
-            </p>
-            <span class="text-emerald-400 font-bold text-xs font-mono">STRICT ENFORCEMENT</span>
-          </div>
-          <div class="space-y-1.5">
-            <span class="text-zinc-500 block text-[10px] uppercase font-bold">Vault MPC Storage</span>
-            <p class="font-sans text-xs text-zinc-400 leading-relaxed">
-              API signature segments are completely isolated using multi-party computation ledger safeguards.
-            </p>
-            <span class="text-emerald-400 font-bold text-xs font-mono">VERIFIED</span>
-          </div>
-        </div>
+</div>
 
-      </div>
-    </div>
-  </section>
+<h1>
 
-  <!-- Section 2: About NYSE Connection -->
-  <section id="about" class="bg-zinc-950 py-24 border-y border-zinc-900">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-block bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider mb-6">
-        Enterprise Standard
-      </div>
-      <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-8 text-glow">
-        Built on NYSE-Grade Enterprise Infrastructure
-      </h2>
-      <p class="text-zinc-400 text-lg sm:text-xl leading-relaxed">
-        Aver represents the synergy of high-speed algorithmic design and the absolute authority of the New York Stock Exchange. By leveraging direct fiber links to core market matchers, our neural bot engine guarantees near-instantaneous transaction execution while shielding your capital through military-grade risk management protocols.
-      </p>
-    </div>
-  </section>
+Your Digital Wallet,
+Your World.
 
-  <!-- Section 3: Features Grid -->
-  <section id="features" class="py-24 relative">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
-          Engineered for Maximum Trading Precision
-        </h2>
-        <p class="text-zinc-400 text-base mt-4">
-          Discover the unique automated features built directly into Aver to safeguard your cryptocurrency portfolio.
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-      <div class="bg-[#121214]/60 border border-zinc-900 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1">
-        <div class="mb-6 inline-block bg-[#1a1a1e] p-4 rounded-xl border border-zinc-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">Neural Strategy Engine</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">Powerful automated indicators and predictive deep-learning algorithms designed to identify high-probability alpha opportunities in real-time.</p>
-      </div>
-  
-      <div class="bg-[#121214]/60 border border-zinc-900 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1">
-        <div class="mb-6 inline-block bg-[#1a1a1e] p-4 rounded-xl border border-zinc-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">NYSE-Secured Infrastructure</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">End-to-end hardware-level encryption, multi-party computation wallets, and institutional-grade custody safeguards to protect assets.</p>
-      </div>
-  
-      <div class="bg-[#121214]/60 border border-zinc-900 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1">
-        <div class="mb-6 inline-block bg-[#1a1a1e] p-4 rounded-xl border border-zinc-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">Ultra-Low Latency Execution</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">Sub-millisecond order execution utilizing co-located servers directly integrated with major global exchange networks.</p>
-      </div>
-  
-      <div class="bg-[#121214]/60 border border-zinc-900 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1">
-        <div class="mb-6 inline-block bg-[#1a1a1e] p-4 rounded-xl border border-zinc-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><circle cx="12" cy="12" r="10"></circle></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">24/7 Algorithmic Monitoring</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">Continuous continuous-deployment logs and real-time execution statistics tracked dynamically by the Aver Core support division.</p>
-      </div>
-  
-      </div>
-    </div>
-  </section>
+</h1>
 
-  <!-- Section 4: Call to Action -->
-  <section class="py-24 relative overflow-hidden bg-zinc-950 border-t border-zinc-900">
-    <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-    
-    <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
-      <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-2xl">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-emerald-500/10 glow-circle"></div>
+<p>
 
-        <h2 class="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight mb-4 relative z-10 text-glow">
-          Launch the Aver Trading Bot
-        </h2>
-        <p class="text-zinc-300 text-lg max-w-xl mx-auto mb-10 relative z-10">
-          Unlock instant connection to the Aver Nox Trader environment. Join the thousands of institutional desks operating on NYSE-grade algorithms.
-        </p>
-        
-        <div class="relative z-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm rounded-xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-emerald-500/10 text-center uppercase tracking-wider">
-            GET IN TOUCH
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+Trade cryptocurrencies with powerful AI, real-time market analysis, secure wallets and instant deposits.
 
-  <!-- Footer Section -->
-  <footer class="bg-[#070708] border-t border-zinc-900 pt-16 pb-12 relative z-10">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        <div class="md:col-span-2">
-          <a href="#" class="flex items-center space-x-3 mb-6">
-            <img src="./src/assets/images/aver_logo_1783096657365.jpg" alt="Aver" class="w-8 h-8 rounded-full border border-emerald-500/30 object-cover" onError="this.src='https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=120&auto=format&fit=crop'">
-            <span class="font-display font-bold text-lg text-white uppercase tracking-wider">Aver</span>
-          </a>
-          <p class="text-zinc-400 text-sm max-w-sm mb-6 leading-relaxed">
-            The elite automated cryptocurrency management software empowering automated strategic wealth generation in all market conditions.
-          </p>
-          <div class="space-y-2 text-xs font-mono text-zinc-500">
-            <p>Email: support@aver.nyse.com</p>
-            <p>Office: 11 Wall Street, New York, NY 10005, USA</p>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="font-display font-bold text-white text-sm tracking-wider uppercase mb-6">Products</h4>
-          <ul class="space-y-3 text-sm text-zinc-400">
-            <li><a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors duration-200">Aver Nox Algorithmic Bot</a></li>
-            <li><a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors duration-200">Direct Core Exec v4.2</a></li>
-            <li><a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors duration-200">NYSE Co-located Nodes</a></li>
-          </ul>
-        </div>
+</p>
 
-        <div>
-          <h4 class="font-display font-bold text-white text-sm tracking-wider uppercase mb-6">Access</h4>
-          <ul class="space-y-3 text-sm text-zinc-400">
-            <li><a href="https://t.me/AverNoxTraderbot" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors duration-200 font-bold text-white flex items-center space-x-1"><span>Launch Telegram</span> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a></li>
-          </ul>
-        </div>
-      </div>
+<div class="buttons">
 
-      <!-- MANDATORY REGISTERED TRADEMARK NYSE DISCLAIMER -->
-      <div class="bg-zinc-950/80 border border-zinc-900 rounded-2xl p-6 text-zinc-400 text-xs leading-relaxed max-w-7xl mx-auto mb-10">
-        <p class="font-bold text-white tracking-wider uppercase text-[10px] mb-1.5 text-emerald-400">Authority Registry & Trademark Protection</p>
-        <p>Aver is a registered trademark of The New York Stock Exchange (NYSE). The entire Aver project was run and built by the NYSE. NYSE Headquarters: 11 Wall Street, New York, NY 10005, USA.</p>
-      </div>
-      
-      <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500">
-        <p>© 2026 Aver Ltd. All rights reserved.</p>
-        <p class="mt-4 md:mt-0 font-mono uppercase tracking-wider text-emerald-400">Co-located NYSE Matchers</p>
-      </div>
-    </div>
-  </footer>
+<a href="#" class="btn">Start Trading</a>
 
-  <!-- Vanilla JavaScript Control -->
-  <script>
-    // Tab Switching functionality
-    function switchTab(tabId) {
-      // Hide all contents
-      document.getElementById('tab-content-signals').classList.add('hidden');
-      document.getElementById('tab-content-backtest').classList.add('hidden');
-      document.getElementById('tab-content-nyse').classList.add('hidden');
-      document.getElementById('tab-content-risk').classList.add('hidden');
-      
-      // Remove active classes from buttons
-      document.getElementById('tab-btn-signals').className = 'flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300';
-      document.getElementById('tab-btn-backtest').className = 'flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300';
-      document.getElementById('tab-btn-nyse').className = 'flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300';
-      document.getElementById('tab-btn-risk').className = 'flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-zinc-500 hover:text-zinc-300';
-      
-      // Show clicked content
-      document.getElementById('tab-content-' + tabId).classList.remove('hidden');
-      
-      // Add active state to clicked button
-      document.getElementById('tab-btn-' + tabId).className = 'flex-1 py-2 px-4 rounded-lg text-xs font-bold transition-all text-emerald-400 bg-zinc-800 border border-emerald-500/10';
-    }
+<a href="#" class="btn secondary">Learn More</a>
 
-    // Live market data simulated fluctuation
-    let basePrice = 64281.50;
-    setInterval(() => {
-      basePrice += (Math.random() * 80 - 40);
-      const formattedPrice = '$' + basePrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-      const priceEl = document.getElementById('btc-price');
-      if (priceEl) priceEl.innerText = formattedPrice;
+</div>
 
-      const changeEl = document.getElementById('btc-change');
-      if (changeEl) {
-        const changeVal = 1.8 + Math.random() * 1.5;
-        changeEl.innerText = '+' + changeVal.toFixed(2) + '%';
-      }
-    }, 3000);
-  </script>
+</div>
+
+<div class="right">
+
+<img src="phone1.png" class="phone">
+
+<img src="phone2.png" class="phone2">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+
+Why Choose Aver
+
+</h2>
+
+<div class="features">
+
+<div class="card">
+
+<img src="security.png">
+
+<h3>Secured Trading</h3>
+
+<p>
+
+Enterprise-grade encryption protects your assets and personal information.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="analytics.png">
+
+<h3>Advanced Trading</h3>
+
+<p>
+
+Professional charts, AI trading signals and automated portfolio management.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="payment.png">
+
+<h3>Easy Payments</h3>
+
+<p>
+
+Deposit and withdraw cryptocurrency in just a few clicks.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="support.png">
+
+<h3>24/7 Support</h3>
+
+<p>
+
+Our support team is available around the clock to assist you.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Aver Trading. All Rights Reserved.
+
+</footer>
+
 </body>
 </html>
