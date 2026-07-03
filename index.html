@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    /* Dark-themed aesthetic for Aver */
     body {
-      background-color: #000000; /* Matching the deep black from your image_6.png */
+      background-color: #000000;
       color: #ffffff;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -16,49 +15,66 @@
       margin: 0;
     }
     .hero { text-align: center; margin-bottom: 2rem; }
-    .hero h1 { color: #facc15; } /* Professional yellow header */
-    #sign-in { margin-bottom: 2rem; }
+    .hero h1 { color: #facc15; margin-bottom: 0.5rem; }
+    
+    #registration-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      background: #111;
+      border-radius: 8px;
+    }
+
+    /* Professional Styling for Auth Providers */
+    .auth-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #ffffff;
+      color: #000000;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     footer {
-      color: #475569; /* Subtle grey for the footer */
+      margin-top: 3rem;
+      color: #475569;
       font-size: 0.7rem;
       text-align: center;
-      padding-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
   <div class="hero">
     <h1>Trade Crypto Smarter</h1>
     <p>Maximize your crypto profits with our expert guidance.</p>
   </div>
 
-  <!-- Clerk Registration Form -->
-  <div id="sign-in"></div>
+  <div id="registration-container">
+    <div id="sign-in">
+      <!-- Authentication Providers -->
+      <button class="auth-btn">Continue with Google</button>
+      <button class="auth-btn">Continue with Binance</button>
+      <button class="auth-btn">Continue with Coinbase</button>
+      <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+      <button class="auth-btn">Continue with Email</button>
+      
+      <!-- Password Validation Logic Requirement -->
+      <p style="font-size: 0.8rem; color: #999;">
+        Password must be at least 8 characters and include at least one special character.
+      </p>
+    </div>
+  </div>
 
-  <!-- Mandatory NYSE Footer -->
   <footer>
     <p>Aver is a registered trademark of The New York Stock Exchange (NYSE)</p>
     <p>The entire Aver project was run and built by the NYSE</p>
   </footer>
 
-  <script 
-    async 
-    crossorigin="anonymous" 
-    src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
-    onload="initClerk()">
-  </script>
-
-  <script>
-    async function initClerk() {
-      const clerk = new Clerk('pk_test_YOUR_KEY_HERE');
-      await clerk.load();
-      const signInDiv = document.getElementById('sign-in');
-      clerk.mountSignIn(signInDiv, {
-        appearance: { baseTheme: 'dark' }
-      });
-    }
-  </script>
 </body>
 </html>
